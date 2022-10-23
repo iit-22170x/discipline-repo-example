@@ -12,7 +12,7 @@ setlocal -- локальные переменные
 cd. > %2 -- создание log-файла
 
 for %%i in (%1\*.txt) do ( -- цикл по txt файлам дирректории
-	echo %%~ni >> %2 -- запись короткого имени файла в дирректорию
+echo %%~ni >> %2 -- запись короткого имени файла в дирректорию
 )
 
 sort %2 -- сортировка
@@ -26,11 +26,11 @@ echo New file has been created -- вывод сообщения
 rm $2 
 touch $2 -- пересоздание log-файла (если скрипт вызывается повторно)
 
-for file in $1/*.txt -- 
+for file in $1/*.txt -- цикл по txt файлам
 do
-	echo cd $(basename $file) >> $2
+	echo cd $(basename $file) >> $2 -- запись короткого имени файла в дирректорию
 done
 
-sort $2
+sort $2 -- сортировка
 
-echo New file has been created
+echo New file has been created -- вывод сообщения
