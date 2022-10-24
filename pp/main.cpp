@@ -19,7 +19,7 @@ int get_components_count(vector<vector<int>> &graph, int without = 0){
 
     int result = 0;
 
-    for(int u = 1; u <= graph.size(); u++){
+    for(int u = 1; u < graph.size(); u++){
         if(u != without && !visited[u]){
             dfs(u, graph, visited, without);
             result++;
@@ -57,7 +57,8 @@ int main(){
             answer.push_back(u);
         }
     }
-
+    cout << endl;
     for(int i = 0; i < answer.size(); i++)
-        cout << answer[i];
+        cout << answer[i] << ' ';
+    cout << endl;
 }
